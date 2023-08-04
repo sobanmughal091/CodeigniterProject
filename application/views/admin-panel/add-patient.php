@@ -31,36 +31,30 @@
                         <div class="card">
                             <div class="card-body">
                                 <h4 class="card-title">Patient Registeration form</h4>
-                                <form method="POST" name="addpatientform" id="addpatientform"
-                                    action="<?= base_url('create')  ?>">
+                                <form method="POST" name="addpatientform" id="addpatientform" action="<?= base_url('create')  ?>">
                                     <div class="form-group">
                                         <label for="firstname">First Name</label>
-                                        <input type="text" class="form-control" value="<?= set_value('firstname') ?>"
-                                            name="firstname" id="firstname" placeholder="First Name">
+                                        <input type="text" class="form-control" value="<?= set_value('firstname') ?>" name="firstname" id="firstname" placeholder="First Name">
                                         <?= form_error('firstname') ?>
                                     </div>
                                     <div class="form-group">
                                         <label for="lastname">Last Name</label>
-                                        <input type="text" class="form-control" value="<?= set_value('lastname') ?>"
-                                            name="lastname" id="lastname" placeholder="Last Name">
+                                        <input type="text" class="form-control" value="<?= set_value('lastname') ?>" name="lastname" id="lastname" placeholder="Last Name">
                                         <?= form_error('lastname') ?>
                                     </div>
                                     <div class="form-group">
                                         <label for="email">Email</label>
-                                        <input type="email" class="form-control" value="<?= set_value('email') ?>"
-                                            name="email" id="email" placeholder="Email">
+                                        <input type="email" class="form-control" value="<?= set_value('email') ?>" name="email" id="email" placeholder="Email">
                                         <?= form_error('email') ?>
                                     </div>
                                     <div class="form-group">
                                         <label for="id-card">ID Card</label>
-                                        <input type="number" class="form-control" value="<?= set_value('id-card') ?>"
-                                            name="id-card" id="id-card" placeholder="ID Card">
+                                        <input type="number" class="form-control" value="<?= set_value('id-card') ?>" name="id-card" id="id-card" placeholder="ID Card">
                                         <?= form_error('id-card') ?>
                                     </div>
                                     <div class="form-group">
                                         <label for="mobile">Mobile</label>
-                                        <input type="number" class="form-control" value="<?= set_value('mobile') ?>"
-                                            name="mobile" id="mobile" placeholder="Mobile">
+                                        <input type="number" class="form-control" value="<?= set_value('mobile') ?>" name="mobile" id="mobile" placeholder="Mobile">
                                         <?= form_error('mobile') ?>
                                     </div>
                                     <button type="submit" name="submit" class="btn btn-primary me-2">Submit</button>

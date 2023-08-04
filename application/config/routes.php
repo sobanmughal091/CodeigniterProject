@@ -58,6 +58,7 @@ $route['translate_uri_dashes'] = FALSE;
  */
 $route['index'] = 'index';
 $route['patients-list'] = 'patients/index';
+// $route['patients-list/(:num)'] = 'patients/index';
 $route['add-patient'] = 'patients/addPatient';
 $route['create'] = 'patients/create';
 $route['edit-patient/(:any)'] = 'patients/editPatient';

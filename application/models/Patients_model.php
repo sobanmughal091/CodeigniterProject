@@ -9,8 +9,9 @@ class Patients_model extends CI_Model
 
 
 
-    public function getpatients()
+    public function getpatients($limit, $start)
     {
+        $this->db->limit($limit, $start);
         $patient = $this->db
             ->order_by('id', 'desc')->get('patients')->result();
         return $patient;

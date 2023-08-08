@@ -13,7 +13,7 @@ class Patients extends CI_Controller
     }
 
 
-
+sdfdsf
 
     public function index()
     {

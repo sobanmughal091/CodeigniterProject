@@ -29,12 +29,10 @@
             <div class="content-wrapper">
                 <div class="row">
                     <div class="col-lg-12 grid-margin stretch-card">
-
                         <div class="card">
                             <?php if ($this->session->flashdata('success') != "") { ?>
                                 <div class="alert alert-success alert-dismissible fade show" role="alert">
-                                    <strong>Success!</strong>
-                                    <?= $this->session->flashdata('success')  ?>
+                                    <strong>Success! </strong><?= $this->session->flashdata('success') ?>
                                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                                 </div>
                             <?php } ?>
@@ -53,9 +51,22 @@
                                 </div>
                             </div>
                             <?php if (!empty($patients)) { ?>
+                                <h2 class="card-title text-center mb-3">Patient Records</h2>
                                 <div class="card-body">
-                                    <h2 class="card-title text-center mb-4">Patient Records</h2>
-                                    <div class="table-responsive">
+                                    <form method="get" action="<?= base_url('patients-list') ?>">
+                                        <div class="row g-3 align-items-center">
+                                            <div class="col-auto">
+                                                <input type="text" name="search_text" id="search_text" placeholder="Search here" class="form-control" aria-describedby="passwordHelpInline">
+                                            </div>
+                                            <div class="col-auto">
+                                                <input type="submit" class="btn btn-inverse-success btn-fw" value="Search" style="padding: 9px;">
+                                            </div>
+                                            <div class="col-auto">
+                                                <a href="<?= base_url('patients-list') ?>" class="btn btn-inverse-info btn-fw" style="padding: 9px;">Reset</a>
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <div class="table-responsive mt-4">
                                         <table class="table table-striped">
                                             <thead>
                                                 <tr class="text-center">
@@ -77,7 +88,7 @@
                                                         <td><?= $patient->mobile ?></td>
                                                         <td>
                                                             <a href="<?= base_url('edit-patient/') . $patient->id ?>" class="btn btn-inverse-warning btn-fw">Edit</a>
-                                                            <a href="<?= base_url('delete/') . $patient->id ?>" class="btn btn-inverse-danger btn-fw">Delete</a>
+                                                            <a href="<?= base_url('delete/') . $patient->id ?>" class="btn btn-inverse-danger btn-fw" onclick="confirm('Are you sure want to Delete this User?')">Delete</a>
                                                         </td>
                                                     </tr>
                                                 <?php } ?>

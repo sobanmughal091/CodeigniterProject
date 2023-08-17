@@ -22,11 +22,14 @@
     <link rel="stylesheet" href="<?= base_url('assets/css/vertical-layout-light/style.css') ?>">
     <!-- endinject -->
     <link rel="shortcut icon" href="<?= base_url('assets/images/favicon.png') ?>" />
-    <link rel="shortcut icon" href="<?= base_url('assets/fontawesome/css/all.min.css') ?>" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="<?= base_url('assets/css/jquery.datetimepicker.min.css') ?>">
     <link rel="shortcut icon" href="<?= base_url('assets/css/style.css') ?>" />
 </head>
 
-<body>
+<body id="main-body" base-url="<?= base_url() ?>">
     <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex align-items-top flex-row">
         <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-start">
             <div class="me-3">

@@ -56,14 +56,26 @@ $route['translate_uri_dashes'] = FALSE;
 /**
  * Admin Panel Routes
  */
-$route['index'] = 'index';
-$route['patients-list'] = 'patients/index';
-// $route['patients-list/(:num)'] = 'patients/index';
-$route['add-patient'] = 'patients/addPatient';
-$route['create'] = 'patients/create';
-$route['edit-patient/(:any)'] = 'patients/editPatient';
-$route['update/(:any)'] = 'patients/update';
-$route['delete/(:any)'] = 'patients/delete';
 $route['login'] = 'login';
 $route['login-authentication'] = 'login/authenticate';
 $route['logout'] = 'login/logout';
+$route['index'] = 'index';
+$route['patients-list'] = 'patients/index';
+$route['appointment-list'] = 'appointment/index';
+$route['bill-list-page'] = 'bills/index';
+$route['bill-list-show/(:num)'] = 'bills/show';
+$route['add-bill'] = 'bills/addBill';
+$route['create-bill'] = 'bills/create';
+$route['edit-bill/(:any)'] = 'bills/editBill';
+$route['update-bill/(:any)'] = 'bills/update';
+$route['delete-bill/(:any)'] = 'bills/delete';
+$route['add-patient'] = 'patients/addPatient';
+$route['add-appointment'] = 'appointment/addAppointment';
+$route['create-patient'] = 'patients/create';
+$route['create-appointment'] = 'appointment/create';
+$route['edit-patient/(:any)'] = 'patients/editPatient';
+$route['edit-appointment/(:any)'] = 'appointment/editAppointment';
+$route['update-patient/(:any)'] = 'patients/update';
+$route['update-appointment/(:any)'] = 'appointment/update';
+$route['delete-patient/(:any)'] = 'patients/delete';
+$route['delete-appointment/(:any)'] = 'appointment/delete';

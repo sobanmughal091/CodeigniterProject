@@ -166,11 +166,9 @@
                 <span class="menu-title">Dashboard</span>
             </a>
         </li>
-        <!-- <li class="nav-item nav-category">UI Elements</li> -->
         <li class="nav-item">
             <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false"
                 aria-controls="ui-basic">
-                <!-- <i class="menu-icon mdi mdi-floor-plan"></i> -->
                 <i class="menu-icon mdi mdi-account-circle"></i>
                 <span class="menu-title">Patients</span>
                 <i class="menu-arrow"></i>
@@ -178,7 +176,38 @@
             <div class="collapse" id="ui-basic">
                 <ul class="nav flex-column sub-menu">
                     <li class="nav-item">
-                        <a class="nav-link" href="<?php echo base_url('patients-list') ?>">Patient List</a>
+                        <a class="nav-link" href="<?= base_url('patients-list') ?>">Patient List</a>
+                    </li>
+                </ul>
+            </div>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic-ap" aria-expanded="false"
+                aria-controls="ui-basic-ap">
+                <i class="menu-icon fa-solid fa-calendar-days"></i>
+                <span class="menu-title">Appointments</span>
+                <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="ui-basic-ap">
+                <ul class="nav flex-column sub-menu">
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?= base_url('appointment-list') ?>">Appointment List</a>
+                    </li>
+                </ul>
+            </div>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic-bill" aria-expanded="false"
+                aria-controls="ui-basic-bill">
+                <i class="menu-icon fa-solid fa-sack-dollar"></i>
+                <span class="menu-title">Billings</span>
+                <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="ui-basic-bill">
+                <ul class="nav flex-column sub-menu">
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?= base_url('bill-list-page') ?>">Billing List</a>
                     </li>
                 </ul>
             </div>

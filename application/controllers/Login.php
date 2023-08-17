@@ -28,7 +28,7 @@ class Login extends CI_Controller
                 // echo '<pre>';
                 // print_r($this->session->userdata['admin_full_name']);
                 // die;
-                return redirect(base_url('patients-list'));
+                return redirect(base_url('index'));
             } else {
                 $this->session->set_flashdata('msg', 'Either email or password is incorrect');
                 redirect(base_url('login'));

@@ -30,27 +30,17 @@
                     <div class="col-lg-12 grid-margin stretch-card">
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="card-title">Patient Registeration form</h4>
-                                <form method="POST" name="addpatientform" id="addpatientform" action="<?= base_url('create')  ?>">
+                                <h4 class="card-title">Patient Appointment Form</h4>
+                                <form method="POST" name="addpatientform" id="addpatientform" action="<?= base_url('create-appointment')  ?>">
                                     <div class="form-group">
-                                        <label for="firstname">First Name</label>
-                                        <input type="text" class="form-control" value="<?= set_value('firstname') ?>" name="firstname" id="firstname" placeholder="First Name">
-                                        <?= form_error('firstname') ?>
+                                        <label for="patient_name">Patient Name</label>
+                                        <input type="text" class="form-control" value="<?= set_value('patient_name') ?>" name="patient_name" id="patient_name" placeholder="Patient Name">
+                                        <?= form_error('patient_name') ?>
                                     </div>
                                     <div class="form-group">
-                                        <label for="lastname">Last Name</label>
-                                        <input type="text" class="form-control" value="<?= set_value('lastname') ?>" name="lastname" id="lastname" placeholder="Last Name">
-                                        <?= form_error('lastname') ?>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="email">Email</label>
-                                        <input type="email" class="form-control" value="<?= set_value('email') ?>" name="email" id="email" placeholder="Email">
-                                        <?= form_error('email') ?>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="id-card">ID Card</label>
-                                        <input type="number" class="form-control" value="<?= set_value('id-card') ?>" name="id-card" id="id-card" placeholder="ID Card">
-                                        <?= form_error('id-card') ?>
+                                        <label for="appointment_time">Appointment Time</label>
+                                        <input id="datetimepicker" type="text" name="datetimepicker" value="<?= set_value('datetimepicker') ?>">
+                                        <?= form_error('datetimepicker') ?>
                                     </div>
                                     <div class="form-group">
                                         <label for="mobile">Mobile</label>
@@ -58,7 +48,7 @@
                                         <?= form_error('mobile') ?>
                                     </div>
                                     <button type="submit" name="submit" class="btn btn-primary me-2">Submit</button>
-                                    <a href="<?= base_url('patients-list') ?>" class="btn btn-dark">Back</a>
+                                    <a href="<?= base_url('appointment-list') ?>" class="btn btn-dark">Back</a>
                                 </form>
                             </div>
                         </div>

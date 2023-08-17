@@ -19,6 +19,16 @@ class Index extends CI_Controller
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/userguide3/general/urls.html
 	 */
+	public function __construct()
+	{
+		parent::__construct();
+		$admin = $this->session->userdata('admin');
+		if (empty($admin)) {
+			$this->session->set_flashdata('msg', 'Your session has been expired');
+			redirect(base_url('login'));
+		}
+	}
+
 
 	public function index()
 	{

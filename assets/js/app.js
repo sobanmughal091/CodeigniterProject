@@ -60,6 +60,8 @@ $(".bill-paginationn").on("click", "a", function (e) {
 });
 
 $("#bills-list-search-btn").click(function (e) {
+
+    dsfd
     e.preventDefault();
     var search_input = $("#search_text").val();
 

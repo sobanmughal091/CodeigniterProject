@@ -8,15 +8,15 @@ class Bills_model extends CI_Model
 
     public function getbills($perPage, $page, $search)
     {
-        if ($perPage != "" && $page != "") {
-            $this->db->limit($perPage, $page);
-        }
-        if ($search != NULL) {
+
+        if (!empty($search)) {
             $this->db->like('patient_name', $search);
             $this->db->or_like('total_charges', $search);
         }
-        $query = $this->db->order_by('id', 'desc')
-            ->get('bills');
+
+        $this->db->limit($perPage, $page);
+        $this->db->order_by('id', 'desc');
+        $query = $this->db->get('bills');
 
         if ($query->num_rows() > 0) {
             return $query->result();
@@ -33,7 +33,8 @@ class Bills_model extends CI_Model
 
     public function create($data)
     {
-        $this->db->insert('bills', $data);
+        $create = $this->db->insert('bills', $data);
+        return $create;
     }
 
     public function getbill($id)
@@ -46,14 +47,16 @@ class Bills_model extends CI_Model
 
     public function updateBill($id, $data)
     {
-        $this->db
+        $update_bill = $this->db
             ->where('id', $id)
             ->update('bills', $data);
+        return $update_bill;
     }
 
     public function deleteBill($id)
     {
-        $this->db
+        $bill = $this->db
             ->where('id', $id)->delete('bills');
+        return $bill;
     }
 }

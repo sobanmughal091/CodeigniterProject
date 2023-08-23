@@ -13,22 +13,29 @@ class bills extends CI_Controller
     }
 
 
+
+
     public function index()
     {
         $this->load->view('admin-panel/bills/bill-list');
     }
 
+
+
+
     public function show()
     {
-        $search = $this->input->get('search');
+        $perPage = 3;
         $page = 0;
+        $search = $this->input->get('search');
         if (empty($search)) {
             $page = $this->uri->segment(2);
         }
-        $perPage = 3;
+
         if ($page != 0) {
             $page = $perPage * ($page - 1);
         }
+
         $config['base_url'] = base_url('bill-list-show');
         $config['use_page_numbers'] = TRUE;
         $config['total_rows'] = $this->bil->billsRecordCount();
@@ -168,7 +175,7 @@ class bills extends CI_Controller
         if ($delete_bill) {
             $response['statusCode'] = 200;
             $response['status'] = 'Success';
-            $response['message'] = 'Bil deleted successful';
+            $response['message'] = 'Bill deleted successful';
         } else {
             $response['statusCode'] = 400;
             $response['status'] = 'Error';

@@ -14,23 +14,22 @@ class Appointment extends CI_Controller
 
     public function index()
     {
-        $perPage = 3;
         $config['base_url'] = base_url('appointment-list');
+        $perPage = 3;
         $page = 0;
         if ($this->input->get('page')) {
             $page = $this->input->get('page');
         }
-        $start_index = 0;
         if ($page != 0) {
-            $start_index = $perPage * ($page - 1);
+            $page = $perPage * ($page - 1);
         }
         $total_rows = 0;
         if ($this->input->get('search_text') != null) {
             $search_text = $this->input->get('search_text');
-            $data['appointments'] = $this->ap->getappointments($perPage, $start_index, $search_text, $is_count = 0);
+            $data['appointments'] = $this->ap->getappointments($perPage, $page, $search_text, $is_count = 0);
             $total_rows = $this->ap->getappointments(null, null, $search_text, $is_count = 1);
         } else {
-            $data['appointments'] = $this->ap->getappointments($perPage, $start_index, null, $is_count = 0);
+            $data['appointments'] = $this->ap->getappointments($perPage, $page, null, $is_count = 0);
             $total_rows = $this->ap->getappointments(null, null, null, $is_count = 1);
         }
         $config['total_rows'] = $total_rows;
@@ -71,6 +70,8 @@ class Appointment extends CI_Controller
     {
         $this->load->view('admin-panel/appointments/add-appointment');
     }
+
+
     public function create()
     {
         $this->form_validation->set_error_delimiters('<p class="text-danger">', '</p>');

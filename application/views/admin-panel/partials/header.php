@@ -22,10 +22,13 @@
     <link rel="stylesheet" href="<?= base_url('assets/css/vertical-layout-light/style.css') ?>">
     <!-- endinject -->
     <link rel="shortcut icon" href="<?= base_url('assets/images/favicon.png') ?>" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="<?= base_url('assets/css/jquery.datetimepicker.min.css') ?>">
     <link rel="stylesheet" href="<?= base_url('assets/css/toastr.min.css') ?>">
     <link rel="shortcut icon" href="<?= base_url('assets/css/style.css') ?>" />
+    <link rel="stylesheet" href="<?= base_url('assets/css/jquery.timepicker.min.css') ?>">
 </head>
 
 <body id="main-body" base-url="<?= base_url() ?>">
@@ -54,8 +57,10 @@
             </ul>
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item dropdown d-none d-lg-block">
-                    <a class="nav-link dropdown-bordered dropdown-toggle dropdown-toggle-split" id="messageDropdown" href="#" data-bs-toggle="dropdown" aria-expanded="false"> Select Category </a>
-                    <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list pb-0" aria-labelledby="messageDropdown">
+                    <a class="nav-link dropdown-bordered dropdown-toggle dropdown-toggle-split" id="messageDropdown"
+                        href="#" data-bs-toggle="dropdown" aria-expanded="false"> Select Category </a>
+                    <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list pb-0"
+                        aria-labelledby="messageDropdown">
                         <a class="dropdown-item py-3">
                             <p class="mb-0 font-weight-medium float-left">Select category</p>
                         </a>
@@ -107,7 +112,8 @@
                     <a class="nav-link count-indicator" id="notificationDropdown" href="#" data-bs-toggle="dropdown">
                         <i class="icon-mail icon-lg"></i>
                     </a>
-                    <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list pb-0" aria-labelledby="notificationDropdown">
+                    <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list pb-0"
+                        aria-labelledby="notificationDropdown">
                         <a class="dropdown-item py-3 border-bottom">
                             <p class="mb-0 font-weight-medium float-left">You have 4 new notifications </p>
                             <span class="badge badge-pill badge-primary float-right">View all</span>
@@ -142,11 +148,13 @@
                     </div>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link count-indicator" id="countDropdown" href="#" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link count-indicator" id="countDropdown" href="#" data-bs-toggle="dropdown"
+                        aria-expanded="false">
                         <i class="icon-bell"></i>
                         <span class="count"></span>
                     </a>
-                    <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list pb-0" aria-labelledby="countDropdown">
+                    <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list pb-0"
+                        aria-labelledby="countDropdown">
                         <a class="dropdown-item py-3">
                             <p class="mb-0 font-weight-medium float-left">You have 7 unread mails </p>
                             <span class="badge badge-pill badge-primary float-right">View all</span>
@@ -154,7 +162,8 @@
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item preview-item">
                             <div class="preview-thumbnail">
-                                <img src="<?= base_url('assets/images/faces/face10.jpg') ?>" alt="image" class="img-sm profile-pic">
+                                <img src="<?= base_url('assets/images/faces/face10.jpg') ?>" alt="image"
+                                    class="img-sm profile-pic">
                             </div>
                             <div class="preview-item-content flex-grow py-2">
                                 <p class="preview-subject ellipsis font-weight-medium text-dark">Marian Garner </p>
@@ -163,7 +172,8 @@
                         </a>
                         <a class="dropdown-item preview-item">
                             <div class="preview-thumbnail">
-                                <img src="<?= base_url('assets/images/faces/face12.jpg') ?>" alt="image" class="img-sm profile-pic">
+                                <img src="<?= base_url('assets/images/faces/face12.jpg') ?>" alt="image"
+                                    class="img-sm profile-pic">
                             </div>
                             <div class="preview-item-content flex-grow py-2">
                                 <p class="preview-subject ellipsis font-weight-medium text-dark">David Grey </p>
@@ -172,7 +182,8 @@
                         </a>
                         <a class="dropdown-item preview-item">
                             <div class="preview-thumbnail">
-                                <img src="<?= base_url('assets/images/faces/face1.jpg') ?>" alt="image" class="img-sm profile-pic">
+                                <img src="<?= base_url('assets/images/faces/face1.jpg') ?>" alt="image"
+                                    class="img-sm profile-pic">
                             </div>
                             <div class="preview-item-content flex-grow py-2">
                                 <p class="preview-subject ellipsis font-weight-medium text-dark">Travis Jenkins </p>
@@ -183,20 +194,25 @@
                 </li>
                 <li class="nav-item dropdown d-none d-lg-block user-dropdown">
                     <a class="nav-link" id="UserDropdown" href="#" data-bs-toggle="dropdown" aria-expanded="false">
-                        <img class="img-xs rounded-circle" src="<?= base_url('assets/images/faces/face8.jpg') ?>" alt="Profile image"> </a>
+                        <img class="img-xs rounded-circle" src="<?= base_url('assets/images/faces/face8.jpg') ?>"
+                            alt="Profile image"> </a>
                     <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
                         <div class="dropdown-header text-center">
-                            <img class="img-md rounded-circle" src="<?= base_url('assets/images/faces/face8.jpg') ?>" alt="Profile image">
+                            <img class="img-md rounded-circle" src="<?= base_url('assets/images/faces/face8.jpg') ?>"
+                                alt="Profile image">
                         </div>
-                        <a class="dropdown-item"><i class="dropdown-item-icon mdi mdi-account-outline text-primary me-2"></i>
+                        <a class="dropdown-item"><i
+                                class="dropdown-item-icon mdi mdi-account-outline text-primary me-2"></i>
                             <?= $this->session->userdata['admin_full_name'] ?>
                         </a>
-                        <a class="dropdown-item" href="<?= base_url('logout') ?>"><i class="dropdown-item-icon mdi mdi-power text-primary me-2"></i>Sign
+                        <a class="dropdown-item" href="<?= base_url('logout') ?>"><i
+                                class="dropdown-item-icon mdi mdi-power text-primary me-2"></i>Sign
                             Out</a>
                     </div>
                 </li>
             </ul>
-            <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-bs-toggle="offcanvas">
+            <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button"
+                data-bs-toggle="offcanvas">
                 <span class="mdi mdi-menu"></span>
             </button>
         </div>

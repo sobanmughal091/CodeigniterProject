@@ -4,6 +4,23 @@ jQuery("#datetimepicker").datetimepicker({
 });
 
 
+jQuery("#datetimepicker_start").datetimepicker({
+    step: 1,
+    format: "H:i:s",
+});
+
+
+
+jQuery("#datetimepicker_end").datetimepicker({
+    step: 1,
+    format: "H:i:s",
+});
+
+
+
+
+
+
 var base_url = $("#main-body").attr("base-url");
 
 
@@ -38,7 +55,7 @@ function loadPagination(pagno) {
                     '<a href="javascript:void(0);" class="btn btn-inverse-info btn-fw" onclick="editBillBtn(' + data.id + ')" data-id="' +
                     data.id +
                     '">Edit</a>' +
-                    '<a href="javascript:void(0);" id="deleteBtn" class="btn btn-inverse-danger btn-fw" onclick="deleteBillBtn(' + data.id + ')" data-id="' +
+                    '<a href="javascript:void(0);" class="btn btn-inverse-danger btn-fw" onclick="deleteBillBtn(' + data.id + ')" data-id="' +
                     data.id +
                     '">Delete</a>' +
                     "</td>" +
@@ -96,7 +113,7 @@ $("#bills-list-search-btn").click(function (e) {
                     '<a href="javascript:void(0);" class="btn btn-inverse-info btn-fw" onclick="editBillBtn(' + data.id + ')" data-id="' +
                     data.id +
                     '">Edit</a>' +
-                    '<a href="javascript:void(0);" id="deleteBtn" class="btn btn-inverse-danger btn-fw" onclick="deleteBillBtn(' + data.id + ')" data-id="' +
+                    '<a href="javascript:void(0);" class="btn btn-inverse-danger btn-fw" onclick="deleteBillBtn(' + data.id + ')" data-id="' +
                     data.id +
                     '">Delete</a>' +
                     "</td>" +
@@ -107,6 +124,7 @@ $("#bills-list-search-btn").click(function (e) {
         },
     });
 });
+
 
 
 

@@ -6,10 +6,10 @@ class Appointment_model extends CI_Model
         parent::__construct();
     }
 
-    public function getappointments($perPage, $start_index, $search_text = null, $is_count = 0)
+    public function getappointments($perPage, $page, $search_text = null, $is_count = 0)
     {
-        if ($perPage != "" && $start_index != "") {
-            $this->db->limit($perPage, $start_index);
+        if ($perPage != "" && $page != "") {
+            $this->db->limit($perPage, $page);
         }
         if ($search_text != NULL) {
             $this->db->like('patient_name', $search_text, 'both');

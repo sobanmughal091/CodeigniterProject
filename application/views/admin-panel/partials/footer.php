@@ -36,6 +36,7 @@
 <script src="<?= base_url('assets/js/jquery.datetimepicker.full.js') ?>"></script>
 <script src="<?= base_url('assets/js/toastr.min.js') ?>"></script>
 <script src="<?= base_url('assets/js/app.js') ?>"></script>
+<script src="<?= base_url('assets/js/jquery.timepicker.min.js') ?>"></script>
 </script>
 </body>
 

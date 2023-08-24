@@ -16,24 +16,11 @@ class Doctors extends CI_Controller
 
     public function index()
     {
-        $perPage = 3;
-        $page = 0;
         $search = $this->input->get('search_text');
-        if (empty($search)) {
-            $page = $this->uri->segment(2);
-        }
-
-        if ($page != 0) {
-            $page = $perPage * ($page - 1);
-        }
-        if ($this->input->get('page')) {
-            $page = $this->input->get('page');
-        }
-
-
+        $page = $this->input->get('page');
         $config["base_url"] = base_url('doctors-list');
         $config["total_rows"] = $this->doc->get_count();
-        $config["per_page"] = $perPage;
+        $config["per_page"] = 3;
         $config['enable_query_strings'] = true;
         $config['use_page_numbers'] = TRUE;
         $config['page_query_string'] = true;
@@ -57,8 +44,13 @@ class Doctors extends CI_Controller
         $config['cur_tag_close'] = '</a></li>';
         $config['num_tag_open'] = '<li class="page-item"><span class="page-link">';
         $config['num_tag_close'] = '</span></li>';
+
+        if (!empty($page)) {
+            $page = $config["per_page"] * ($page - 1);
+        }
+
         $this->pagination->initialize($config);
-        $data['doctors'] = $this->doc->get_all_doctors($perPage, $page, $search);
+        $data['doctors'] = $this->doc->get_all_doctors($config["per_page"], $page, $search);
         $data["links"] = $this->pagination->create_links();
         $this->load->view('admin-panel/doctors/doctors-list', $data);
     }

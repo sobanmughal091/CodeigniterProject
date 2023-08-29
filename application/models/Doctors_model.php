@@ -14,11 +14,6 @@ class Doctors_model extends CI_Model
     }
 
 
-    public function get_count()
-    {
-        return $this->db->count_all('doctors');
-    }
-
 
     public function get_all_doctors($limit, $start, $search = "")
     {
@@ -33,6 +28,12 @@ class Doctors_model extends CI_Model
             ->order_by('dr_id', 'desc')->get('doctors');
 
         return $query->result();
+    }
+
+
+    public function get_count()
+    {
+        return $this->db->count_all('doctors');
     }
 
 

@@ -56,34 +56,46 @@ $route['translate_uri_dashes'] = FALSE;
 /**
  * Admin Panel Routes
  */
+
+//  Login and Logout
 $route['login'] = 'login';
 $route['login-authentication'] = 'login/authenticate';
 $route['logout'] = 'login/logout';
+// Index
 $route['index'] = 'index';
+// Patients
 $route['patients-list'] = 'patients/index';
 $route['add-patient'] = 'patients/addPatient';
 $route['create-patient'] = 'patients/create';
 $route['edit-patient/(:any)'] = 'patients/editPatient';
 $route['update-patient/(:any)'] = 'patients/update';
 $route['delete-patient/(:any)'] = 'patients/delete';
+// Appointments
 $route['appointment-list'] = 'appointment/index';
 $route['add-appointment'] = 'appointment/addAppointment';
 $route['create-appointment'] = 'appointment/create';
 $route['edit-appointment/(:any)'] = 'appointment/editAppointment';
 $route['update-appointment/(:any)'] = 'appointment/update';
 $route['delete-appointment/(:any)'] = 'appointment/delete';
+// Bills
 $route['bill-list-page'] = 'bills/index';
 $route['bill-list-show/(:any)'] = 'bills/show';
 $route['add-bill'] = 'bills/addBill';
 $route['edit-bill'] = 'bills/editBill';
 $route['update-bill'] = 'bills/updateBill';
 $route['delete-bill'] = 'bills/delete';
+// Doctors
 $route['doctors-list'] = 'doctors/index';
-$route['doctors-list/(:num)'] = 'doctors/index';
+// $route['doctors-list/(:any)'] = 'doctors/index';
 $route['add-doctor'] = 'doctors/addDoctor';
 $route['create-doctor'] = 'doctors/create';
 $route['edit-doctor/(:any)'] = 'doctors/editDoctor';
 $route['update-doctor/(:any)'] = 'doctors/update';
 $route['delete-doctor/(:any)'] = 'doctors/delete';
+// Inpatients
 $route['inpatients-list'] = 'inpatients/index';
-$route['inpatients-list'] = 'inpatients/index';
+$route['add-inpatient'] = 'inpatients/addInpatient';
+$route['create-inpatient'] = 'inpatients/create';
+$route['edit-inpatient/(:any)'] = 'inpatients/editInpatient';
+$route['update-inpatient/(:any)'] = 'inpatients/update';
+$route['delete-inpatient/(:any)'] = 'inpatients/delete';

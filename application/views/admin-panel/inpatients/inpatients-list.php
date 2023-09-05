@@ -80,7 +80,8 @@
                                                 <th>#</th>
                                                 <th>Full Name</th>
                                                 <th>Mobile</th>
-                                                <th>Address</th>
+                                                <th>In Time</th>
+                                                <th>Out Time</th>
                                                 <th>Room No</th>
                                                 <th>Status</th>
                                                 <th>Action</th>
@@ -92,7 +93,9 @@
                                                 <td><?= $inpatient->id   ?></td>
                                                 <td><?= $inpatient->first_name . " " . $inpatient->last_name; ?></td>
                                                 <td><?= $inpatient->mobile ?></td>
-                                                <td><?= $inpatient->address ?></td>
+
+                                                <td><?= $inpatient->in_time ?></td>
+                                                <td><?= $inpatient->out_time ?></td>
                                                 <td><?= $inpatient->room_no ?></td>
                                                 <td><?php if ($inpatient->status == 1) { ?>
                                                     <div class="badge badge-success">Active</div>
@@ -103,9 +106,10 @@
                                                 <td>
                                                     <a href="<?= base_url('edit-inpatient/') . $inpatient->id ?>"
                                                         class="btn btn-inverse-warning btn-fw">Edit</a>
+
                                                     <a href="<?= base_url('delete-inpatient/') . $inpatient->id ?>"
                                                         class="btn btn-inverse-danger btn-fw"
-                                                        onclick="confirm('Are you sure you want to delete this inpatient?')">Delete</a>
+                                                        onclick="isconfirmInpatient();">Delete</a>
                                                 </td>
                                             </tr>
                                             <?php } ?>

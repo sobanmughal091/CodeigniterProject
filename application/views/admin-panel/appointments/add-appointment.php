@@ -31,20 +31,24 @@
                         <div class="card">
                             <div class="card-body">
                                 <h4 class="card-title">Patient Appointment Form</h4>
-                                <form method="POST" name="addpatientform" id="addpatientform" action="<?= base_url('create-appointment')  ?>">
+                                <form method="POST" name="addpatientform" id="addpatientform"
+                                    action="<?= base_url('create-appointment')  ?>">
                                     <div class="form-group">
                                         <label for="patient_name">Patient Name</label>
-                                        <input type="text" class="form-control" value="<?= set_value('patient_name') ?>" name="patient_name" id="patient_name" placeholder="Patient Name">
+                                        <input type="text" class="form-control" value="<?= set_value('patient_name') ?>"
+                                            name="patient_name" id="patient_name" placeholder="Patient Name">
                                         <?= form_error('patient_name') ?>
                                     </div>
                                     <div class="form-group">
                                         <label for="appointment_time">Appointment Time</label>
-                                        <input id="datetimepicker" type="text" name="datetimepicker" value="<?= set_value('datetimepicker') ?>">
-                                        <?= form_error('datetimepicker') ?>
+                                        <input id="appointment_time" type="datetime-local" name="appointment_time"
+                                            value="<?= set_value('appointment_time') ?>">
+                                        <?= form_error('appointment_time') ?>
                                     </div>
                                     <div class="form-group">
                                         <label for="mobile">Mobile</label>
-                                        <input type="number" class="form-control" value="<?= set_value('mobile') ?>" name="mobile" id="mobile" placeholder="Mobile">
+                                        <input type="number" class="form-control" value="<?= set_value('mobile') ?>"
+                                            name="mobile" id="mobile" placeholder="Mobile">
                                         <?= form_error('mobile') ?>
                                     </div>
                                     <button type="submit" name="submit" class="btn btn-primary me-2">Submit</button>

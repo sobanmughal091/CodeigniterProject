@@ -88,7 +88,8 @@
                                                         <td><?= $doctor->end_timing ?></td>
                                                         <td>
                                                             <a href="<?= base_url('edit-doctor/') . $doctor->dr_id ?>" class="btn btn-inverse-warning btn-fw">Edit</a>
-                                                            <a href="<?= base_url('delete-doctor/') . $doctor->dr_id ?>" class="btn btn-inverse-danger btn-fw" onclick="confirm('Are you sure you want to delete this doctor?')">Delete</a>
+
+                                                            <a href="<?= base_url('delete-doctor/') . $doctor->dr_id ?>" class="btn btn-inverse-danger btn-fw" onclick="isconfirmDoctor();">Delete</a>
                                                         </td>
                                                     </tr>
                                                 <?php } ?>

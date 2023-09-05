@@ -17,7 +17,8 @@ class bills extends CI_Controller
 
     public function index()
     {
-        $this->load->view('admin-panel/bills/bill-list');
+        $data['page_name'] = 'billing_page';
+        $this->load->view('admin-panel/bills/bill-list', $data);
     }
 
 

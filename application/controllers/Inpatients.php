@@ -66,14 +66,16 @@ class Inpatients extends CI_Controller
         $this->form_validation->set_rules('first_name', 'First Name', 'required');
         $this->form_validation->set_rules('last_name', 'Last Name', 'required');
         $this->form_validation->set_rules('mobile', 'Mobile', 'required|numeric|exact_length[11]');
-        $this->form_validation->set_rules('address', 'Address', 'required');
+        $this->form_validation->set_rules('in_time', 'In Time', 'required');
+        $this->form_validation->set_rules('out_time', 'Out Time', 'required');
         $this->form_validation->set_rules('room_no', 'Room No', 'required');
         if ($this->form_validation->run() == true) {
             $data['first_name'] = $this->input->post('first_name');
             $data['last_name'] = $this->input->post('last_name');
             $data['mobile'] = $this->input->post('mobile');
-            $data['address'] = $this->input->post('address');
             $data['status'] = $this->input->post('status');
+            $data['in_time'] = date("Y-m-d h:i:s A", strtotime($this->input->post('in_time')));
+            $data['out_time'] = date('Y-m-d h:i:s A', strtotime($this->input->post('out_time')));
             $data['room_no'] = $this->input->post('room_no');
             $this->inp->create($data);
             $this->session->set_flashdata('success', 'Inpatient added successfully');
@@ -100,13 +102,15 @@ class Inpatients extends CI_Controller
         $this->form_validation->set_rules('first_name', 'First Name', 'required');
         $this->form_validation->set_rules('last_name', 'Last Name', 'required');
         $this->form_validation->set_rules('mobile', 'Mobile', 'required|numeric|exact_length[11]');
-        $this->form_validation->set_rules('address', 'Address', 'required');
+        $this->form_validation->set_rules('in_time', 'In Time', 'required');
+        $this->form_validation->set_rules('out_time', 'Out Time', 'required');
         $this->form_validation->set_rules('room_no', 'Room No', 'required');
         if ($this->form_validation->run() == true) {
             $data['first_name'] = $this->input->post('first_name');
             $data['last_name'] = $this->input->post('last_name');
             $data['mobile'] = $this->input->post('mobile');
-            $data['address'] = $this->input->post('address');
+            $data['in_time'] = date('d-m-Y H:i:s A', strtotime($this->input->post('in_time')));
+            $data['out_time'] = date('d-m-Y H:i:s A', strtotime($this->input->post('out_time')));
             $data['status'] = $this->input->post('status');
             $data['room_no'] = $this->input->post('room_no');
             $this->inp->updateInpatients($id, $data);

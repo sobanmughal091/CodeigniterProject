@@ -31,82 +31,72 @@
                     <div class="col-lg-12 grid-margin stretch-card">
                         <div class="card">
                             <?php if ($this->session->flashdata('success') != "") { ?>
-                            <div class="alert alert-success alert-dismissible fade show" role="alert">
-                                <strong>Success! </strong><?= $this->session->flashdata('success') ?>
-                                <button type="button" class="btn-close" data-bs-dismiss="alert"
-                                    aria-label="Close"></button>
-                            </div>
+                                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                    <strong>Success! </strong><?= $this->session->flashdata('success') ?>
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                </div>
                             <?php } ?>
                             <?php if ($this->session->flashdata('error') != "") { ?>
-                            <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                                <strong>Success!</strong>
-                                <?= $this->session->flashdata('error')  ?>
-                                <button type="button" class="btn-close" data-bs-dismiss="alert"
-                                    aria-label="Close"></button>
-                            </div>
+                                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                    <strong>Success!</strong>
+                                    <?= $this->session->flashdata('error')  ?>
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                </div>
                             <?php } ?>
                             <div class="row">
                                 <div class="col-lg-10"></div>
                                 <div class="col-lg-2">
-                                    <a href="<?= base_url('add-patient') ?>"
-                                        class="btn btn-inverse-primary btn-fw mt-3 mb-3">Add
+                                    <a href="<?= base_url('add-patient') ?>" class="btn btn-inverse-primary btn-fw mt-3 mb-3">Add
                                         Patient</a>
                                 </div>
                             </div>
                             <?php if (!empty($patients)) { ?>
-                            <h2 class="card-title text-center mb-3">Patient Records</h2>
-                            <div class="card-body">
-                                <form method="get" action="<?= base_url('patients-list') ?>">
-                                    <div class="row g-3 align-items-center">
-                                        <div class="col-auto">
-                                            <input type="text" name="search_text" id="search_text"
-                                                placeholder="Search here" class="form-control"
-                                                aria-describedby="passwordHelpInline">
+                                <h2 class="card-title text-center mb-3">Patient Records</h2>
+                                <div class="card-body">
+                                    <form method="get" action="<?= base_url('patients-list') ?>">
+                                        <div class="row g-3 align-items-center">
+                                            <div class="col-auto">
+                                                <input type="text" name="search_text" id="search_text" placeholder="Search here" class="form-control" aria-describedby="passwordHelpInline">
+                                            </div>
+                                            <div class="col-auto">
+                                                <input type="submit" class="btn btn-inverse-success btn-fw" value="Search" style="padding: 9px;">
+                                            </div>
+                                            <div class="col-auto">
+                                                <a href="<?= base_url('patients-list') ?>" class="btn btn-inverse-info btn-fw" style="padding: 9px;">Reset</a>
+                                            </div>
                                         </div>
-                                        <div class="col-auto">
-                                            <input type="submit" class="btn btn-inverse-success btn-fw" value="Search"
-                                                style="padding: 9px;">
-                                        </div>
-                                        <div class="col-auto">
-                                            <a href="<?= base_url('patients-list') ?>"
-                                                class="btn btn-inverse-info btn-fw" style="padding: 9px;">Reset</a>
-                                        </div>
+                                    </form>
+                                    <div class="table-responsive mt-4">
+                                        <table class="table table-striped">
+                                            <thead>
+                                                <tr class="text-center">
+                                                    <th>#</th>
+                                                    <th>Full Name</th>
+                                                    <th>Email</th>
+                                                    <th>ID Card</th>
+                                                    <th>Mobile</th>
+                                                    <th>Action</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <?php foreach ($patients as $patient) { ?>
+                                                    <tr class="text-center">
+                                                        <td><?= $patient->id ?></td>
+                                                        <td><?= $patient->first_name . ' ' . $patient->last_name ?></td>
+                                                        <td><?= $patient->email ?></td>
+                                                        <td><?= $patient->id_card ?></td>
+                                                        <td><?= $patient->mobile ?></td>
+                                                        <td>
+                                                            <a href="<?= base_url('edit-patient/') . $patient->id ?>" class="btn btn-inverse-warning btn-fw">Edit</a>
+                                                            <a href="<?= base_url('delete-patient/') . $patient->id ?>" class="btn btn-inverse-danger btn-fw" onclick="isconfirmPatient();">Delete</a>
+                                                        </td>
+                                                    </tr>
+                                                <?php } ?>
+                                            </tbody>
+                                        </table>
                                     </div>
-                                </form>
-                                <div class="table-responsive mt-4">
-                                    <table class="table table-striped">
-                                        <thead>
-                                            <tr class="text-center">
-                                                <th>#</th>
-                                                <th>Full Name</th>
-                                                <th>Email</th>
-                                                <th>ID Card</th>
-                                                <th>Mobile</th>
-                                                <th>Action</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <?php foreach ($patients as $patient) { ?>
-                                            <tr class="text-center">
-                                                <td><?= $patient->id ?></td>
-                                                <td><?= $patient->first_name . ' ' . $patient->last_name ?></td>
-                                                <td><?= $patient->email ?></td>
-                                                <td><?= $patient->id_card ?></td>
-                                                <td><?= $patient->mobile ?></td>
-                                                <td>
-                                                    <a href="<?= base_url('edit-patient/') . $patient->id ?>"
-                                                        class="btn btn-inverse-warning btn-fw">Edit</a>
-                                                    <a href="<?= base_url('delete-patient/') . $patient->id ?>"
-                                                        class="btn btn-inverse-danger btn-fw"
-                                                        onclick="confirm('Are you sure want to Delete this patient?')">Delete</a>
-                                                </td>
-                                            </tr>
-                                            <?php } ?>
-                                        </tbody>
-                                    </table>
+                                    <?= $this->pagination->create_links(); ?>
                                 </div>
-                                <?= $this->pagination->create_links(); ?>
-                            </div>
                             <?php } ?>
                         </div>
                     </div>

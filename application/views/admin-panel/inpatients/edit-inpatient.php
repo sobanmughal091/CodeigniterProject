@@ -32,57 +32,53 @@
                             <div class="card">
                                 <div class="card-body">
                                     <h4 class="card-title">Edit Inpatient</h4>
-                                    <form method="POST" name="editinpatientform" id="editinpatientform"
-                                        action="<?= base_url('update-inpatient/') . $inpatient->id    ?>">
+                                    <form method="POST" name="editinpatientform" id="editinpatientform" action="<?= base_url('update-inpatient/') . $inpatient->id    ?>">
                                         <div class="form-group">
                                             <label for="first_name">First Name</label>
-                                            <input type="text" class="form-control"
-                                                value="<?= set_value('first_name', $inpatient->first_name) ?>"
-                                                name="first_name" id="first_name" placeholder="First Name">
+                                            <input type="text" class="form-control" value="<?= set_value('first_name', $inpatient->first_name) ?>" name="first_name" id="first_name" placeholder="First Name">
                                             <?= form_error('first_name') ?>
                                         </div>
                                         <div class="form-group">
                                             <label for="last_name">Last Name</label>
-                                            <input type="text" class="form-control"
-                                                value="<?= set_value('last_name', $inpatient->last_name) ?>"
-                                                name="last_name" id="last_name" placeholder="Last Name">
+                                            <input type="text" class="form-control" value="<?= set_value('last_name', $inpatient->last_name) ?>" name="last_name" id="last_name" placeholder="Last Name">
                                             <?= form_error('last_name') ?>
                                         </div>
                                         <div class="form-group">
                                             <label for="mobile">Mobile</label>
-                                            <input id="mobile" type="text" name="mobile" class="form-control"
-                                                value="<?= set_value('mobile', $inpatient->mobile) ?>"
-                                                placeholder="Mobile">
+                                            <input id="mobile" type="number" name="mobile" class="form-control" value="<?= set_value('mobile', $inpatient->mobile) ?>" placeholder="Mobile">
                                             <?= form_error('mobile') ?>
                                         </div>
                                         <div class="form-group">
-                                            <label for="address">Address</label>
-                                            <input id="address" type="text" name="address" class="form-control"
-                                                value="<?= set_value('address', $inpatient->address) ?>">
-                                            <?= form_error('address') ?>
+
+                                            <label for="in_time">In Time</label>
+                                            <input id="in_time" type="datetime-local" name="in_time" value="<?= date('Y-m-d\TH:i', strtotime($inpatient->in_time)) ?>">
+                                            <?= form_error('in_time') ?>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="out_time">Out Time</label>
+                                            <input id="out_time" type="datetime-local" name="out_time" value="<?= date('Y-m-d\TH:i', strtotime($inpatient->out_time)) ?>">
+                                            <?= form_error('out_time') ?>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="room_no">Room No</label>
+                                            <input id="room_no" type="number" name="room_no" class="form-control" value="<?= set_value('room_no', $inpatient->room_no) ?>">
+                                            <?= form_error('room_no') ?>
                                         </div>
                                         <div class="form-group">
                                             <label for="status">Status</label><br>
                                             <div class="d-inline">
-                                                <input type="radio" id="statusActive" name="status"
-                                                    <?= ($inpatient->status == 1) ? "checked" : ""  ?> value="1">
+                                                <input type="radio" id="statusActive" name="status" <?= ($inpatient->status == 1) ? "checked" : ""  ?> value="1">
                                                 <label for="statusActive">Active
                                                 </label>
                                             </div>
                                             <div class="d-inline">
-                                                <input type="radio" id="statusInactive" name="status" value="0"
-                                                    <?= ($inpatient->status == 0) ? "checked" : ""  ?>>
+                                                <input type="radio" id="statusInactive" name="status" value="0" <?= ($inpatient->status == 0) ? "checked" : ""  ?>>
 
                                                 <label for="statusBlock">Inactive
                                                 </label>
                                             </div>
                                         </div>
-                                        <div class="form-group">
-                                            <label for="room_no">Room No</label>
-                                            <input id="room_no" type="text" name="room_no" class="form-control"
-                                                value="<?= set_value('room_no', $inpatient->room_no) ?>">
-                                            <?= form_error('room_no') ?>
-                                        </div>
+
                                         <button type="submit" name="submit" class="btn btn-primary me-2">Submit</button>
                                         <a href="<?= base_url('inpatients-list') ?>" class="btn btn-dark">Back</a>
                                     </form>

@@ -47,15 +47,28 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="mobile">Mobile</label>
-                                        <input id="mobile" type="text" name="mobile" class="form-control"
+                                        <input id="mobile" type="number" name="mobile" class="form-control"
                                             value="<?= set_value('mobile') ?>" placeholder="Mobile">
                                         <?= form_error('mobile') ?>
                                     </div>
+
                                     <div class="form-group">
-                                        <label for="address">Address</label>
-                                        <input id="address" type="text" name="address" class="form-control"
-                                            value="<?= set_value('address') ?>">
-                                        <?= form_error('address') ?>
+                                        <label for="in_time">In Time</label>
+                                        <input id="in_time" type="datetime-local" name="in_time"
+                                            value="<?= set_value('in_time') ?>">
+                                        <?= form_error('in_time') ?>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="out_time">Out Time</label>
+                                        <input id="out_time" type="datetime-local" name="out_time"
+                                            value="<?= set_value('out_time') ?>">
+                                        <?= form_error('out_time') ?>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="room_no">Room No</label>
+                                        <input id="room_no" type="number" name="room_no" class="form-control"
+                                            value="<?= set_value('room_no') ?>">
+                                        <?= form_error('room_no') ?>
                                     </div>
                                     <div class="form-group">
                                         <label for="status">Status</label><br>
@@ -70,12 +83,7 @@
                                             </label>
                                         </div>
                                     </div>
-                                    <div class="form-group">
-                                        <label for="room_no">Room No</label>
-                                        <input id="room_no" type="text" name="room_no" class="form-control"
-                                            value="<?= set_value('room_no') ?>">
-                                        <?= form_error('room_no') ?>
-                                    </div>
+
                                     <input type="submit" name="submit" class="btn btn-primary me-2" value="Submit">
                                     <a href="<?= base_url('inpatients-list') ?>" class="btn btn-dark">Back</a>
                                 </form>

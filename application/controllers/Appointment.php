@@ -10,6 +10,7 @@ class Appointment extends CI_Controller
             redirect(base_url('login'));
         }
         $this->load->model('Appointment_model', 'ap');
+        $this->load->helper('date');
     }
 
     public function index()
@@ -76,11 +77,11 @@ class Appointment extends CI_Controller
     {
         $this->form_validation->set_error_delimiters('<p class="text-danger">', '</p>');
         $this->form_validation->set_rules('patient_name', 'Patient Name', 'required');
-        $this->form_validation->set_rules('datetimepicker', 'Appointment Time', 'required');
+        $this->form_validation->set_rules('appointment_time', 'Appointment Time', 'required');
         $this->form_validation->set_rules('mobile', 'Mobile', 'required|numeric|exact_length[11]');
         if ($this->form_validation->run() == true) {
             $data['patient_name'] = $this->input->post('patient_name');
-            $data['appointment_time'] = date('d-m-Y H:i:s A', strtotime($this->input->post('datetimepicker')));
+            $data['appointment_time'] = date("Y-m-d h:i:s A", strtotime($this->input->post('appointment_time')));
             $data['mobile'] = $this->input->post('mobile');
             $this->ap->create($data);
             $this->session->set_flashdata('success', 'Appointment added successfully');
@@ -105,11 +106,11 @@ class Appointment extends CI_Controller
         $id = $this->uri->segment(2);
         $this->form_validation->set_error_delimiters('<p class="text-danger">', '</p>');
         $this->form_validation->set_rules('patient_name', 'Patient Name', 'required');
-        $this->form_validation->set_rules('datetimepicker', 'Appointment Time', 'required');
+        $this->form_validation->set_rules('appointment_time', 'Appointment Time', 'required');
         $this->form_validation->set_rules('mobile', 'Mobile', 'required|numeric|exact_length[11]');
         if ($this->form_validation->run() == true) {
             $data['patient_name'] = $this->input->post('patient_name');
-            $data['appointment_time'] = date('d-m-Y H:i:s A', strtotime($this->input->post('datetimepicker')));
+            $data['appointment_time'] = date("Y-m-d h:i:s A", strtotime($this->input->post('appointment_time')));
             $data['mobile'] = $this->input->post('mobile');
             $this->ap->updateAppointment($id, $data);
             $this->session->set_flashdata('success', 'Appointment updated successfully');

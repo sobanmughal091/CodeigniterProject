@@ -23,6 +23,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
+
+date_default_timezone_set("Asia/Karachi");
 $config['base_url'] = 'http://localhost/hospital-management-system/';
 
 /*

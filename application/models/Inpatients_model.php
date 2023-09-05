@@ -12,11 +12,13 @@ class Inpatients_model extends CI_Model
             $this->db->like('first_name', $search);
             $this->db->or_like('last_name', $search);
             $this->db->or_like('mobile', $search);
-            $this->db->or_like('address', $search);
+            $this->db->or_like('in_time', $search);
+            $this->db->or_like('out_time', $search);
+            $this->db->or_like('room_no', $search);
         }
         $this->db->limit($limit, $start);
         $query = $this->db
-            ->order_by('id ', 'desc')->get('inpatients');
+            ->order_by('out_time', 'asc')->get('inpatients');
 
         return $query->result();
     }
@@ -43,9 +45,9 @@ class Inpatients_model extends CI_Model
     }
 
 
-    public function deleteInpatient()
+    public function deleteInpatient($id)
     {
         $this->db
-            ->where('dr_id', $id)->delete('doctors');
+            ->where('id', $id)->delete('inpatients');
     }
 }

@@ -2,17 +2,14 @@
     <i class="settings-close ti-close"></i>
     <ul class="nav nav-tabs border-top" id="setting-panel" role="tablist">
         <li class="nav-item">
-            <a class="nav-link active" id="todo-tab" data-bs-toggle="tab" href="#todo-section" role="tab"
-                aria-controls="todo-section" aria-expanded="true">TO DO LIST</a>
+            <a class="nav-link active" id="todo-tab" data-bs-toggle="tab" href="#todo-section" role="tab" aria-controls="todo-section" aria-expanded="true">TO DO LIST</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" id="chats-tab" data-bs-toggle="tab" href="#chats-section" role="tab"
-                aria-controls="chats-section">CHATS</a>
+            <a class="nav-link" id="chats-tab" data-bs-toggle="tab" href="#chats-section" role="tab" aria-controls="chats-section">CHATS</a>
         </li>
     </ul>
     <div class="tab-content" id="setting-content">
-        <div class="tab-pane fade show active scroll-wrapper" id="todo-section" role="tabpanel"
-            aria-labelledby="todo-section">
+        <div class="tab-pane fade show active scroll-wrapper" id="todo-section" role="tabpanel" aria-labelledby="todo-section">
             <div class="add-items d-flex px-3 mb-0">
                 <form class="form w-100">
                     <div class="form-group d-flex">
@@ -97,8 +94,7 @@
             </div>
             <ul class="chat-list">
                 <li class="list active">
-                    <div class="profile"><img src=" <?php base_url('assets/images/faces/face1.jpg') ?>"
-                            alt="image"><span class="online"></span></div>
+                    <div class="profile"><img src=" <?php base_url('assets/images/faces/face1.jpg') ?>" alt="image"><span class="online"></span></div>
                     <div class="info">
                         <p>Thomas Douglas</p>
                         <p>Available</p>
@@ -106,8 +102,7 @@
                     <small class="text-muted my-auto">19 min</small>
                 </li>
                 <li class="list">
-                    <div class="profile"><img src=" <?php base_url('assets/images/faces/face2.jpg') ?>"
-                            alt="image"><span class="offline"></span></div>
+                    <div class="profile"><img src=" <?php base_url('assets/images/faces/face2.jpg') ?>" alt="image"><span class="offline"></span></div>
                     <div class="info">
                         <div class="wrapper d-flex">
                             <p>Catherine</p>
@@ -118,8 +113,7 @@
                     <small class="text-muted my-auto">23 min</small>
                 </li>
                 <li class="list">
-                    <div class="profile"><img src=" <?php base_url('assets/images/faces/face3.jpg') ?>"
-                            alt="image"><span class="online"></span></div>
+                    <div class="profile"><img src=" <?php base_url('assets/images/faces/face3.jpg') ?>" alt="image"><span class="online"></span></div>
                     <div class="info">
                         <p>Daniel Russell</p>
                         <p>Available</p>
@@ -127,8 +121,7 @@
                     <small class="text-muted my-auto">14 min</small>
                 </li>
                 <li class="list">
-                    <div class="profile"><img src=" <?php base_url('assets/images/faces/face4.jpg') ?>"
-                            alt="image"><span class="offline"></span></div>
+                    <div class="profile"><img src=" <?php base_url('assets/images/faces/face4.jpg') ?>" alt="image"><span class="offline"></span></div>
                     <div class="info">
                         <p>James Richardson</p>
                         <p>Away</p>
@@ -136,8 +129,7 @@
                     <small class="text-muted my-auto">2 min</small>
                 </li>
                 <li class="list">
-                    <div class="profile"><img src=" <?php base_url('assets/images/faces/face5.jpg') ?>"
-                            alt="image"><span class="online"></span></div>
+                    <div class="profile"><img src=" <?php base_url('assets/images/faces/face5.jpg') ?>" alt="image"><span class="online"></span></div>
                     <div class="info">
                         <p>Madeline Kennedy</p>
                         <p>Available</p>
@@ -145,8 +137,7 @@
                     <small class="text-muted my-auto">5 min</small>
                 </li>
                 <li class="list">
-                    <div class="profile"><img src=" <?php base_url('assets/images/faces/face6.jpg') ?>"
-                            alt="image"><span class="online"></span></div>
+                    <div class="profile"><img src=" <?php base_url('assets/images/faces/face6.jpg') ?>" alt="image"><span class="online"></span></div>
                     <div class="info">
                         <p>Sarah Graves</p>
                         <p>Available</p>
@@ -167,8 +158,7 @@
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false"
-                aria-controls="ui-basic">
+            <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
                 <i class="menu-icon mdi mdi-account-circle"></i>
                 <span class="menu-title">Patients</span>
                 <i class="menu-arrow"></i>
@@ -182,8 +172,7 @@
             </div>
         </li>
         <li class="nav-item">
-            <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic-ap" aria-expanded="false"
-                aria-controls="ui-basic-ap">
+            <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic-ap" aria-expanded="false" aria-controls="ui-basic-ap">
                 <i class="menu-icon fa-solid fa-calendar-days"></i>
                 <span class="menu-title">Appointments</span>
                 <i class="menu-arrow"></i>
@@ -198,8 +187,7 @@
         </li>
 
         <li class="nav-item">
-            <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic-bill" aria-expanded="false"
-                aria-controls="ui-basic-bill">
+            <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic-bill" aria-expanded="false" aria-controls="ui-basic-bill">
                 <i class="menu-icon fa-solid fa-sack-dollar"></i>
                 <span class="menu-title">Billings</span>
                 <i class="menu-arrow"></i>
@@ -215,8 +203,23 @@
 
 
         <li class="nav-item">
-            <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic-doctor" aria-expanded="false"
-                aria-controls="ui-basic-doctor">
+            <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic-consultancy" aria-expanded="false" aria-controls="ui-basic-consultancy">
+                <i class="menu-icon fa-solid fa-sack-dollar"></i>
+                <span class="menu-title">Consultancies</span>
+                <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="ui-basic-consultancy">
+                <ul class="nav flex-column sub-menu">
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?= base_url('consultancy-list-page') ?>">Consultancy List</a>
+                    </li>
+                </ul>
+            </div>
+        </li>
+
+
+        <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic-doctor" aria-expanded="false" aria-controls="ui-basic-doctor">
                 <i class="fas menu-icon fa-user-md"></i>
                 <span class="menu-title">Doctors</span>
                 <i class="menu-arrow"></i>
@@ -232,8 +235,7 @@
 
 
         <li class="nav-item">
-            <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic-inpatient" aria-expanded="false"
-                aria-controls="ui-basic-inpatient">
+            <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic-inpatient" aria-expanded="false" aria-controls="ui-basic-inpatient">
                 <i class="fas menu-icon fa-user-injured"></i>
                 <span class="menu-title">Inpatients</span>
                 <i class="menu-arrow"></i>
